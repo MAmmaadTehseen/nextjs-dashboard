@@ -1,17 +1,28 @@
 import '@/app/ui/global.css';
 import { inter } from '@/app/ui/fonts';
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import Navbar from "./components/Nabvar"
+import Counter from './components/counter'
 
 
+export const metadata = {
+  title: 'Dashboard',
+}
 export default function RootLayout({
   children,
 }) {
   return (
-    <html lang="en">
-            <body className={`${inter.className} antialiased`}>{children}
-            <SpeedInsights/>
-            </body>
+  
+<>
 
-    </html>
+        <Navbar/>
+        <Counter/>
+
+            <div className={`${inter.className} antialiased`}>{children}
+            
+            </div>
+
+</>
+   
+    
   );
 }
